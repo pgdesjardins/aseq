@@ -7,14 +7,44 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>name - com.alogient.mobileclaim</name>
+    <name>mobile claim</name>
 
     <description>
         description - com.alogient.mobileclaim
     </description>
 
-    <author href="https://build.phonegap.com" email="support@phonegap.com">
-        Hardeep Shoker 
+    <author href="http://www.alogient.com" email="gdesjardins@alogient.com">
+        Gabriel Desjardins 
     </author>
-
+    
+    <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="prerendered-icon" value="false" />
+    <preference name="stay-in-webview" value="false" />
+    
+    <icon src="icons/ios/apple-touch-icon.png" width="57" height="57" />
+		<icon src="icons/ios/apple-touch-icon-72x72" gap:platform="ios" width="72" height="72" />
+		<icon src="icons/ios/apple-touch-icon-114x114" width="114" height="114" />
+		<gap:splash src="splash/ios/splash-320x480.png" width="320" height="480" />
+		<gap:splash src="splash/ios/splash-640x960.png" width="640" height="960" />
+		<!--gap:splash src="splash/ios/Default-Landscape.png" width="1024" height="768" /-->
+		<!--gap:splash src="splash/ios/Default-Portrait.png" width="768" height="1024" /-->
+		
+		<!-- If you do not want any permissions to be added to your app, add the
+    following tag to your config.xml; you will still have the INTERNET
+    permission on your app, which PhoneGap requires. -->
+		<!--preference name="permissions" value="none"/-->
+		<!-- to enable individual permissions use the following examples -->
+		<feature name="http://api.phonegap.com/1.0/battery"/>
+		<feature name="http://api.phonegap.com/1.0/camera"/>
+		<feature name="http://api.phonegap.com/1.0/contacts"/>
+		<feature name="http://api.phonegap.com/1.0/file"/>
+		<feature name="http://api.phonegap.com/1.0/geolocation"/>
+		<feature name="http://api.phonegap.com/1.0/media"/>
+		<feature name="http://api.phonegap.com/1.0/network"/>
+		<feature name="http://api.phonegap.com/1.0/notification"/>
+		
+		<!-- A blank access tag - <access /> - denies access to any external resources. A wildcard - <access origin="*" /> - allows access to any external resource. Otherwise, you can specify allowed domains individually -->
+		<access origin="*" />
 </widget>
