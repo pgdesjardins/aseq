@@ -2,8 +2,7 @@ var app = {};
 $(document).ready(function(){
 });
 $(window).load(function(){
-	$('.carousel').carousel({interval:false});
-	$(".carousel").swipe({
+	$('.carousel').carousel({interval:false}).swipe({
 		threshold:0,
 		swipe: function(event, direction){
 			if (direction === 'left') {
