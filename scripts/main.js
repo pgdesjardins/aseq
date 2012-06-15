@@ -1,11 +1,11 @@
-if (typeof window.console === "undefined") {
-    window.console = {
-        log: function () { },
-        info: function () { },
-        warn: function () { },
-        error: function () { }
-    };
-};
+//if (typeof window.console === "undefined") {
+//    window.console = {
+//        log: function () { },
+//        info: function () { },
+//        warn: function () { },
+//        error: function () { }
+//    };
+//};
 var app = {};
 $(document).ready(function(){
 });
