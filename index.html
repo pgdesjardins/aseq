@@ -8,7 +8,8 @@
 		<link rel="stylesheet" href="css/default.css" type="text/css" media="screen">
 	</head>
 	<body>
-        <a href="picture.html" class="btn">Go to picture component</a>
+    <section class="screen" id="scrn-home">
+    <a href="#" class="btn" onclick="app.gotoScrn('scrn-picture')">Go to picture component</a>
 		<div id="myCarousel" class="carousel slide">
 			<!-- Carousel items -->
 			<div class="carousel-inner">
@@ -20,7 +21,11 @@
 			<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
 			<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 		</div>
-
+		</section>
+		<section style="display: none" id="scrn-picture">
+			<button class="btn btn-primary" id="btn-take-picture">Take a picture</button>
+			<button class="btn btn-primary" id="btn-photo-gallery">Photo Gallery</button>	
+		</section>
 	</body>
 	<script type="text/javascript" charset="utf-8" src="libs/jquery-1.7.2.js"></script>
 	<script type="text/javascript" charset="utf-8" src="libs/jquery.touchSwipe.js"></script>

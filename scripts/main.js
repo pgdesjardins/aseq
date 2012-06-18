@@ -6,11 +6,25 @@
 //        error: function () { }
 //    };
 //};
-var app = {};
+
+console.log('main');
+window.alert('main');
+
+var app = {
+	scrn : ['scrn-home', 'scrn-picture'],
+	currentScrn : 'scrn-home',
+	gotoScrn: function(strScrnname){
+			$('#'+app.currentScrn).hide();
+			app.currentScrn = strScrnname;
+			$('#'+app.currentScrn).show();			
+	}
+};
 $(document).ready(function(){
+		console.log('document ready');
 });
 
 $(window).load(function(){
+	console.log('window load');
 	$('.carousel').carousel({interval:false}).swipe({
 		threshold:0,
 		swipe: function(event, direction){
