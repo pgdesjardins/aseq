@@ -6,10 +6,6 @@
 //        error: function () { }
 //    };
 //};
-
-console.log('main');
-window.alert('main');
-
 var app = {
 	scrn : ['scrn-home', 'scrn-picture'],
 	currentScrn : 'scrn-home',
@@ -43,11 +39,10 @@ function onLoad() {
 }
 
 function onDeviceReady() {
-	console.log('onDeviceReady');
-	document.addEventListener("pause", deviceReady, false);
+	deviceReady();
 }
 
-deviceReady = function(){
+function deviceReady(){
 		console.log('deviceready');
     document.addEventListener("pause", function(){
         console.log('application pause');
