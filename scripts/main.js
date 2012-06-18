@@ -45,34 +45,10 @@ $(window).load(function(){
 				$('.carousel').carousel('prev');
 			}}
 	});
-});
-
-function deviceReady(){
-		console.log('deviceready');
-    document.addEventListener("pause", function(){
-        console.log('application pause');
-    }, false);
-
-    document.addEventListener("resume", function(){
-        console.log('application resume');
-    }, false);
-
-    document.addEventListener("online", function(){
-        console.log('application online');
-    }, false);
-
-    document.addEventListener("offline", function(){
-        console.log('application offline');
-    }, false);
-
-    document.addEventListener("backbutton", function(){
-        // NOT IN IOS
-        console.log('application backbutton');
-    }, false);
-
-		$('#btn-photo-send').on('click', function(){
+	
+	$('#btn-photo-send').on('click', function(){
 			app.waitScreen.show();
-			$.post("http://192.168.1.102/aseq/php/save.php",  {json: JSON.stringify(app.pictures)}, function(data){ app.waitScreen.hide(); alert(data); });	
+			$.post("http://192.168.1.102:8080/aseq/php/save.php",  {json: JSON.stringify(app)}, function(data){ app.waitScreen.hide(); alert(data); });	
 		});
 		
     $('#btn-take-picture').on('click', function(){
@@ -115,4 +91,28 @@ function deviceReady(){
             }
         );
     });
+});
+
+function deviceReady(){
+		console.log('deviceready');
+    document.addEventListener("pause", function(){
+        console.log('application pause');
+    }, false);
+
+    document.addEventListener("resume", function(){
+        console.log('application resume');
+    }, false);
+
+    document.addEventListener("online", function(){
+        console.log('application online');
+    }, false);
+
+    document.addEventListener("offline", function(){
+        console.log('application offline');
+    }, false);
+
+    document.addEventListener("backbutton", function(){
+        // NOT IN IOS
+        console.log('application backbutton');
+    }, false);
 };
