@@ -1,5 +1,5 @@
-.waitScreen{border-radius:20px;-webkit-border-radius:20px;-moz-border-radius:20px;background-color:rgba(150, 150, 150, 0.8);color:white;display:none;height:50px;left:50%;line-height:50px;margin:-25px 0 0 -160px;padding:0 20px;position:fixed;position:absolute;text-align:center;top:50%;width:300px;z-index:999;}
-header,footer{background-color:rgba(150, 150, 150, 0.8);color:white;line-height:50px;height:50px;left:0;position:absolute;}
+.waitScreen{border-radius:20px;-webkit-border-radius:20px;-moz-border-radius:20px;background-color:rgba(0, 0, 0, 0.8);color:white;display:none;height:150px;left:50%;line-height:150px;margin:-25px 0 0 -120px;padding:0 20px;position:fixed;position:absolute;text-align:center;top:50%;width:200px;z-index:999;}
+header,footer{background-color:rgba(0, 0, 0, 0.8);color:white;line-height:50px;height:50px;left:0;position:absolute;}
 header{top:0;}
 footer{bottom:0;}
 section{margin:50px 0;overflow:scroll;max-height:380px;}
