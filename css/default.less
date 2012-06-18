@@ -1,0 +1,23 @@
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+.waitScreen {
+	.rounded-corners(20px);
+	background-color: rgba(150, 150, 150, 0.8);
+	color: white;
+	display: none;
+	height: 50px
+	left: 50%;
+	line-hight: 50px;
+	margin: -25px 0 0 -160px;
+	padding: 0 20px;
+	position: fixed;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	width: 300px;
+	z-index: 999;
+}

@@ -13,6 +13,18 @@ var app = {
 			$('#'+app.currentScrn).hide();
 			app.currentScrn = strScrnname;
 			$('#'+app.currentScrn).show();			
+	},
+	pictures: [],
+	waitScreen: {
+		show: function(){
+			$('.waitScreen').show();
+		},
+		hide: function(){
+			$('.waitScreen').hide();
+		},
+		toggle: function(){
+			$('.waitScreen').toggle();	
+		}
 	}
 };
 document.addEventListener("deviceready", deviceReady, false);
@@ -58,6 +70,11 @@ function deviceReady(){
         console.log('application backbutton');
     }, false);
 
+		$('#btn-photo-send').on('click', function(){
+			app.waitScreen.show();
+			$.post("http://192.168.1.102/aseq/php/save.php",  {json: JSON.stringify(app.pictures)}, function(data){ app.waitScreen.hide(); alert(data); });	
+		});
+		
     $('#btn-take-picture').on('click', function(){
     		console.log('btn-take-picture click');
         navigator.camera.getPicture(
@@ -65,6 +82,7 @@ function deviceReady(){
                 console.log('cameraSuccess');
                 var src = "data:image/jpeg;base64," + imageData;
                 $('body').append('<img src="'+src+'" width="100" />');
+                app.pictures.push(src);
             },
             function(){
                 console.log('cameraError');
@@ -83,15 +101,16 @@ function deviceReady(){
             function(imageData){
                 console.log('cameraSuccess');
                 console.log(imageData);
-                var src = imageData;
+                 var src = "data:image/jpeg;base64," + imageData;
                 $('body').append('<img src="'+src+'" width="100" />');
+                app.pictures.push(src);
             },
             function(){
                 console.log('cameraError');
             },
             {
-                quality: 60,
-                destinationType: Camera.DestinationType.FILE_URI,
+               	quality: 50,
+                destinationType: Camera.DestinationType.DATA_URL,
                 sourceType : Camera.PictureSourceType.PHOTOLIBRARY
             }
         );
