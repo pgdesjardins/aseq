@@ -71,6 +71,7 @@ deviceReady = function(){
     }, false);
 
     $('#btn-take-picture').on('click', function(){
+    		console.log('btn-take-picture click');
         navigator.camera.getPicture(
             function(imageData){
                 console.log('cameraSuccess');
@@ -89,6 +90,7 @@ deviceReady = function(){
         );
     });
     $('#btn-photo-gallery').on('click', function(){
+    		console.log('btn-photo-gallery click');
         navigator.camera.getPicture(
             function(imageData){
                 console.log('cameraSuccess');
