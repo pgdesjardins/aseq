@@ -15,6 +15,7 @@ var app = {
 			$('#'+app.currentScrn).show();			
 	}
 };
+document.addEventListener("deviceready", deviceReady, false);
 $(document).ready(function(){
 		console.log('document ready');
 });
@@ -34,14 +35,6 @@ $(window).load(function(){
 	});
 });
 
-function onLoad() {
-	document.addEventListener("deviceready", onDeviceReady, false);
-}
-
-function onDeviceReady() {
-	deviceReady();
-}
-
 function deviceReady(){
 		console.log('deviceready');
     document.addEventListener("pause", function(){
@@ -49,7 +42,7 @@ function deviceReady(){
     }, false);
 
     document.addEventListener("resume", function(){
-        console.log('application pause');
+        console.log('application resume');
     }, false);
 
     document.addEventListener("online", function(){
