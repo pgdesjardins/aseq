@@ -24,6 +24,7 @@ $(document).ready(function(){
 });
 
 $(window).load(function(){
+	
 	console.log('window load');
 	$('.carousel').carousel({interval:false}).swipe({
 		threshold:0,
@@ -37,8 +38,17 @@ $(window).load(function(){
 	});
 });
 
-document.addEventListener("deviceready", function(){
-    console.log('deviceready');
+function onLoad() {
+	document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+function onDeviceReady() {
+	console.log('onDeviceReady');
+	document.addEventListener("pause", deviceReady, false);
+}
+
+deviceReady = function(){
+		console.log('deviceready');
     document.addEventListener("pause", function(){
         console.log('application pause');
     }, false);
@@ -96,4 +106,4 @@ document.addEventListener("deviceready", function(){
             }
         );
     });
-}, false);
+};
